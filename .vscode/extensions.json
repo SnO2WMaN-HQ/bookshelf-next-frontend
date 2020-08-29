@@ -7,6 +7,7 @@
     "stylelint.vscode-stylelint",
     "bradlc.vscode-tailwindcss",
     "jpoissonnier.vscode-styled-components",
-    "mikestead.dotenv"
+    "mikestead.dotenv",
+    "Prisma.vscode-graphql"
   ]
 }
