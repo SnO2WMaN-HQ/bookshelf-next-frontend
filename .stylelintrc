@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "@shopify/stylelint-plugin/prettier",
+    "stylelint-config-styled-components"
+  ]
+}

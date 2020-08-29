@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "redhat.vscode-yaml",
+    "EditorConfig.EditorConfig",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss",
+    "jpoissonnier.vscode-styled-components",
+    "mikestead.dotenv"
+  ]
+}
