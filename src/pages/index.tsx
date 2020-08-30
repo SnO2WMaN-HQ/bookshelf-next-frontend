@@ -1,6 +1,8 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, {useState} from 'react';
 
+import {Bookshelf} from '~/components/index/bookshelf/Bookshelf';
+import {NavBar} from '~/components/index/navbar/NavBar';
 import {useBooksQuery} from '~/generated/graphql';
 
 export interface Props {
@@ -8,34 +10,32 @@ export interface Props {
   userAgent?: string;
 }
 
-export const Component: React.FC<Props> = ({className}) => {
+export const IndexPage: React.FC<Props> = ({className}) => {
   const {data, loading, error} = useBooksQuery();
+
+  const [limited, setLimited] = useState(true);
+  const [showDetails, setShowDetails] = useState(true);
 
   return (
     <main className={clsx(className)}>
-      <ul
-        className={clsx(
-          'grid',
-          'grid-cols-1',
-          'lg:grid-cols-8',
-          'lg:grid-cols-12',
-          'gap-2',
-        )}
-      >
-        {!loading &&
-          data.manyBooks.map(({title, id, cover}) => (
-            <li key={id}>
-              <img
-                className={clsx('select-none', 'pointer-events-none')}
-                src={cover}
-                alt={title}
-              />
-              <p className={clsx('text-sm', 'truncate')}>{title}</p>
-            </li>
-          ))}
-      </ul>
+      <NavBar
+        className={clsx('mb-4', 'w-full')}
+        limited={limited}
+        showDetails={showDetails}
+        limitOn={() => setLimited(true)}
+        limitOff={() => setLimited(false)}
+        toggleShowTitle={() => setShowDetails(!showDetails)}
+      />
+      {!loading && (
+        <Bookshelf
+          className={clsx('mx-auto')}
+          books={data.manyBooks}
+          limited={limited}
+          showDetails={showDetails}
+        />
+      )}
     </main>
   );
 };
 
-export default Component;
+export default IndexPage;
