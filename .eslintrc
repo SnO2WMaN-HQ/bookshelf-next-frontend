@@ -8,7 +8,15 @@
   ],
   "rules": {
     "jest/valid-title": [0],
-    "jest/lowercase-name": [0]
+    "jest/lowercase-name": [0],
+    "jsx-a11y/anchor-is-valid": [
+      2,
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ]
   },
   "overrides": [
     {
