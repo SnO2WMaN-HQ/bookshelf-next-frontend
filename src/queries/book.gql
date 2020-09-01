@@ -1,0 +1,27 @@
+query getBook($id: String!) {
+  book(id: $id) {
+    id
+    title
+    cover
+    latestVersion {
+      version
+      meta
+      isbn
+      publishedAt
+    }
+    price {
+      base {
+        value
+        currency
+      }
+      tax {
+        value
+        currency
+      }
+      calculated {
+        value
+        currency
+      }
+    }
+  }
+}
