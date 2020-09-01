@@ -2,8 +2,12 @@
   "name": "bookshelf-next-frontend",
   "private": "true",
   "scripts": {
-    "dev": "next dev -p 3000",
-    "build": "next build",
+    "dev": "run-p -n dev:*",
+    "dev:codegen": "yarn build:codegen -ws",
+    "dev:next": "next dev -p 3000",
+    "build": "run-s build:gqlgen build:next",
+    "build:codegen": "gql-gen",
+    "build:next": "next build",
     "start": "next start",
     "export": "next export",
     "lint": "run-s -cn lint:*",
@@ -29,6 +33,7 @@
     "apollo-boost": "^0.4.9",
     "clsx": "^1.1.0",
     "graphql": "^15.3.0",
+    "graphql-scalars": "^1.2.6",
     "graphql-tag": "^2.11.0",
     "i18next": "^19.6.3",
     "i18next-browser-languagedetector": "^6.0.1",
@@ -38,7 +43,8 @@
     "react-dom": "16.13.1",
     "react-i18next": "^11.7.0",
     "styled-components": "^5.1.1",
-    "tailwindcss": "^1.7.1"
+    "tailwindcss": "^1.7.1",
+    "type-fest": "^0.16.0"
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.2",
