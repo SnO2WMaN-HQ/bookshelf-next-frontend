@@ -1,3 +1,25 @@
 {
-  "translation": {}
+  "translation": {
+    "tax": "税",
+    "consumption_tax": "消費税",
+    "base_price": "本体価格",
+    "currency": "{{value, currency}}"
+  },
+  "pages": {
+    "book": {
+      "details": {
+        "title": {
+          "price": "価格",
+          "isbn": "ISBN",
+          "published_at": "発行日"
+        },
+        "display": {
+          "isbn": "{{isbn, isbn}}",
+          "price": "{{calculated}}",
+          "price_detail": "{{calculated}}($t(base_price){{base}}+$t(tax){{tax}})",
+          "published_at": "{{date, YYYY年MM月DD日}}"
+        }
+      }
+    }
+  }
 }

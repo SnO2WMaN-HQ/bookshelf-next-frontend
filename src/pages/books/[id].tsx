@@ -1,10 +1,9 @@
 import clsx from 'clsx';
-import React, {useState} from 'react';
 import {useRouter} from 'next/router';
-import DefaultErrorPage from 'next/error';
+import React from 'react';
 
-import {useBooksQuery, useGetBookQuery} from '~/generated/graphql';
-import {BookPrice} from '~/components/book/BookPrice';
+import {Table} from '~/components/book/BookDetail';
+import {useGetBookQuery} from '~/generated/graphql';
 
 export interface Props {
   className?: string;
@@ -66,39 +65,12 @@ export const BookPage: React.FC<Props> = ({className}) => {
               >
                 {data.book.title}
               </h1>
-              <table className={clsx('table-auto')}>
-                <tbody>
-                  {data.book.price && (
-                    <tr>
-                      <td className={clsx('pr-4')}>
-                        <span className={clsx('text-sm', 'font-bold')}>
-                          定価
-                        </span>
-                      </td>
-                      <td>
-                        <BookPrice
-                          className={clsx('text-sm')}
-                          {...data.book.price}
-                        />
-                      </td>
-                    </tr>
-                  )}
-                  {data.book.latestVersion?.isbn && (
-                    <tr>
-                      <td className={clsx('pr-4')}>
-                        <span className={clsx('text-sm', 'font-bold')}>
-                          ISBN
-                        </span>
-                      </td>
-                      <td>
-                        <span className={clsx('text-sm', 'select-all')}>
-                          {data.book.latestVersion?.isbn}
-                        </span>
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
+              <Table
+                {...data.book}
+                price={data.book?.price || undefined}
+                isbn={data.book?.isbn || undefined}
+                publishedAt={data.book?.publishedAt || undefined}
+              />
             </div>
           )}
         </div>

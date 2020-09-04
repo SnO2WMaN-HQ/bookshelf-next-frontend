@@ -3,12 +3,8 @@ query getBook($id: String!) {
     id
     title
     cover
-    latestVersion {
-      version
-      meta
-      isbn
-      publishedAt
-    }
+    isbn
+    publishedAt
     price {
       base {
         value
