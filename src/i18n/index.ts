@@ -4,6 +4,7 @@ import {initReactI18next} from 'react-i18next';
 import dayjs from 'dayjs';
 
 import ja from './ja/translation.json';
+import {formatCurrency} from './currency';
 
 const resources = {ja};
 
@@ -12,12 +13,14 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'ja',
-    debug: false,
+    fallbackLng: 'ja-JP',
+    debug: true,
     interpolation: {
       escapeValue: false,
-      format(value, format) {
+      format(value, format, lang) {
         if (value instanceof Date) return dayjs(value).format(format);
+        if (format === 'currency')
+          return formatCurrency(value, lang || 'us-EN');
         return value;
       },
     },
