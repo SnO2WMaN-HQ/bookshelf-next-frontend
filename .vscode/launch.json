@@ -2,13 +2,23 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch",
       "type": "node",
       "request": "launch",
-      "name": "Launch",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "yarn",
       "runtimeArgs": ["dev"],
       "console": "integratedTerminal"
+    },
+    {
+      "name": "Debug Jest Tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["test:debug"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "stopOnEntry": true
     }
   ]
 }
