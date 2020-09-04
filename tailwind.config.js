@@ -7,7 +7,14 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
   },
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        uxl: '1600px',
+      },
+      gridTemplateColumns: {
+        16: 'repeat(16, minmax(0, 1fr))',
+      },
+    },
   },
   variants: {},
   plugins: [],

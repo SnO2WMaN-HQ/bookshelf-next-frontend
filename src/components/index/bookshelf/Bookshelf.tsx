@@ -29,12 +29,14 @@ export const Component: React.FC<Props> = ({
       'md:grid-cols-6': limited,
       'lg:grid-cols-7': limited,
       'xl:grid-cols-8': limited,
+      'uxl:grid-cols-10': limited,
       // unlimited
       'max-w-full': !limited,
       'sm:grid-cols-6': !limited,
       'md:grid-cols-8': !limited,
       'lg:grid-cols-10': !limited,
       'xl:grid-cols-12': !limited,
+      'uxl:grid-cols-16': !limited,
       'px-4': !limited,
     })}
   >
