@@ -3,7 +3,7 @@ import {useRouter} from 'next/router';
 import React from 'react';
 
 import {Table} from '~/components/book/BookDetail';
-import {useGetBookQuery} from '~/generated/graphql';
+import {useGetBookQuery} from '~~/generated/graphql';
 
 export interface Props {
   className?: string;

@@ -3,7 +3,7 @@ import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {Merge} from 'type-fest';
 
-import {GetBookQuery} from '~/generated/graphql';
+import {GetBookQuery} from '~~/generated/graphql';
 
 export type ContainerProps = {
   className?: string;

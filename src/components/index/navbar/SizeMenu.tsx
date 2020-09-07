@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTh, faThLarge} from '@fortawesome/free-solid-svg-icons';
 
-import {useBooksQuery} from '~/generated/graphql';
+import {useBooksQuery} from '~~/generated/graphql';
 
 export interface ContainerProps {
   className?: string;

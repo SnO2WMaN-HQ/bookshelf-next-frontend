@@ -1,9 +1,9 @@
 schema:
   - ${GRAPHQL_API_ENDPOINT}
 documents:
-  - 'src/queries/*.{ts,gql}'
+  - 'src/queries/*.{ts,graphql}'
 generates:
-  src/generated/graphql.ts:
+  generated/graphql.ts:
     plugins:
       - 'typescript'
       - 'typescript-operations'

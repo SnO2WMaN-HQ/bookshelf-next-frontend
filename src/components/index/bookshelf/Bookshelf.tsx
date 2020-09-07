@@ -6,7 +6,7 @@ import {useIntersection, useMeasure, useWindowSize} from 'react-use';
 
 import {BookLink} from './BookLink';
 
-import {useBooksQuery} from '~/generated/graphql';
+import {useBooksQuery} from '~~/generated/graphql';
 
 export interface ContainerProps {
   className?: string;
