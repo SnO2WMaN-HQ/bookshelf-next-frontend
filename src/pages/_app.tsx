@@ -1,6 +1,7 @@
 import {AppProps} from 'next/app';
 import React from 'react';
 import '~/i18n';
+import '~/styles/index.css';
 import '~/styles/tailwind.css';
 import {ApolloProvider} from '@apollo/react-hooks';
 

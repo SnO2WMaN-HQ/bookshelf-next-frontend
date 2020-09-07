@@ -57,6 +57,6 @@ export const Component: React.FC<Props> = ({
   </div>
 );
 
-export const Book: React.FC<ContainerProps> = (props) => {
+export const BookLink: React.FC<ContainerProps> = (props) => {
   return <Component {...props} />;
 };

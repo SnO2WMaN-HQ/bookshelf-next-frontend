@@ -47,6 +47,7 @@
     "react": "^16.13.1",
     "react-dom": "16.13.1",
     "react-i18next": "^11.7.0",
+    "react-use": "^15.3.4",
     "styled-components": "^5.1.1",
     "tailwindcss": "^1.7.1",
     "type-fest": "^0.16.0"

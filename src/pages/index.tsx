@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 
 import {Bookshelf} from '~/components/index/bookshelf/Bookshelf';
 import {NavBar} from '~/components/index/navbar/NavBar';
-import {useBooksQuery} from '~/generated/graphql';
 
 export interface Props {
   className?: string;
@@ -11,9 +10,7 @@ export interface Props {
 }
 
 export const IndexPage: React.FC<Props> = ({className}) => {
-  const {data, loading, error} = useBooksQuery();
-
-  const [limited, setLimited] = useState(true);
+  const [limited, setLimited] = useState(false);
   const [showDetails, setShowDetails] = useState(true);
 
   return (
@@ -26,14 +23,11 @@ export const IndexPage: React.FC<Props> = ({className}) => {
         limitOff={() => setLimited(false)}
         toggleShowTitle={() => setShowDetails(!showDetails)}
       />
-      {!loading && (
-        <Bookshelf
-          className={clsx('mx-auto')}
-          books={data.manyBooks}
-          limited={limited}
-          showDetails={showDetails}
-        />
-      )}
+      <Bookshelf
+        className={clsx('mx-auto')}
+        limited={limited}
+        showDetails={showDetails}
+      />
     </main>
   );
 };

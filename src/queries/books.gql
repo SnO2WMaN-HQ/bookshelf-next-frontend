@@ -1,7 +1,13 @@
-query books {
-  manyBooks {
-    id
-    title
-    cover
+query books($page: Int!) {
+  manyBooks(limit: 16, page: $page) {
+    pageInfo {
+      hasNextPage
+      nextPage
+    }
+    docs {
+      id
+      title
+      cover
+    }
   }
 }
