@@ -19,7 +19,7 @@ pre-commit:
       run: eslint {staged_files}
     prettier:
       tags: frontend lint
-      glob: '*.{css,sass,scss,json,yml,yaml,md,gql,graphql}'
+      glob: '*.{json,yml,yaml,md,gql,graphql}'
       run: prettier --check {staged_files}
     stylelint:
       tags: frontend lint
