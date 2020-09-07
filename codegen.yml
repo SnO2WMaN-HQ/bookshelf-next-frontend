@@ -12,3 +12,13 @@ generates:
       scalars:
         ISBN: string
         URL: string
+  generated/schema.graphql:
+    plugins:
+      - 'schema-ast'
+    config:
+      includeDirectives: true
+  generated/graphql-introspection.json:
+    plugins:
+      - 'introspection'
+    config:
+      minify: true

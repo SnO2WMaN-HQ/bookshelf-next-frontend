@@ -15,11 +15,11 @@ pre-commit:
   commands:
     eslint:
       tags: frontend lint
-      glob: '*.{js,jsx,ts,tsx}'
+      glob: '*.{js,jsx,ts,tsx,graphql}'
       run: eslint {staged_files}
     prettier:
       tags: frontend lint
-      glob: '*.{json,yml,yaml,md,gql,graphql}'
+      glob: '*.{json,yml,yaml,md,graphql}'
       run: prettier --check {staged_files}
     stylelint:
       tags: frontend lint
@@ -27,7 +27,7 @@ pre-commit:
       run: stylelint {staged_files}
     prettier-configs:
       tags: frontend lint
-      glob: '*.{babel,eslint,prettier,renovate}rc'
+      glob: '*.{babel,eslint,prettier,renovate,graphql}rc|.graphqlconfig'
       run: prettier --check {staged_files}
     circleci:
       tags: ci lint
